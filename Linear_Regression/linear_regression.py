@@ -28,6 +28,8 @@ def plot(X,y,theta):
     plt.ylabel('y')
     plt.title('Linear Regression')
     plt.show()
+
+    
 if __name__ == '__main__':
     ## generating some random data
     X = 2 * np.random.rand(100,1)
