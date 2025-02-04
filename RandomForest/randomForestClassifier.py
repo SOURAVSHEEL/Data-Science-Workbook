@@ -12,3 +12,18 @@ X, y = data.data, data.target
 
 # Split the data into training and testing sets (80% train, 20% test)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Step 2: Train the Random Forest Classifier
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+# Step 3: Make predictions and evaluate the model
+y_pred = rf.predict(X_test)
+
+# Print Classification Report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+# Print Confusion Matrix
+print("Confusion Matrix:")
+print(confusion_matrix(y_test, y_pred))
