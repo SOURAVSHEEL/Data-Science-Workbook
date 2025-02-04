@@ -27,3 +27,8 @@ print(classification_report(y_test, y_pred))
 # Print Confusion Matrix
 print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
+
+# Step 4: Visualize Feature Importance
+feature_importance = pd.Series(rf.feature_importances_, index=data.feature_names)
+feature_importance.sort_values(ascending=False).plot(kind='bar', title="Feature Importance")
+plt.show()
